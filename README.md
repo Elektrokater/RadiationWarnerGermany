@@ -7,7 +7,7 @@ Nutzen: Durch ein stündliches ausführen des Scripts, wird man bei einem dramat
 Cronjob Intervall: Es ist völlig ausreichend und empfohlen, diese Script maximal 1x pro Stunde auszuführen, einfach aus dem Grund, da auch nur einmal pro Stunde die Daten vom BFS aktualisiert werden und kein unnötiger Traffic die Server belasten soll. Aus diesem Grund ist es auch ratsam, die Zeit anzupassen, zu welcher das Script ausgeführt wird, dh. das man es vielleicht nicht am Beginn der Stunde bei Minute 0 ausführt, sondern vielmehr eine leicht andere Zeit angibt, z.B. 5 oder 10 Minuten nach Stundenbeginn. Auch dies soll einfach dazu beitragen, die Last für die Server so gering wie möglich zu halten, selbst wenn dieses oder ein ähnliches Script von vielen Anwendern genutzt wird. 
 Ein Beispiel Cronjob, welcher bei einem Debian Server mit dem Befehl ```crontab -e``` in die sich öffnende Datei eingetragen werden kann ist: 
 
-```20 * * * * sudo python RadiationWarner.py```. Vorrausgesetzt es sind alle nötigen Pakete: requests, json, os, datetime, pprint installiert. 
+```20 * * * * sudo python RadiationWarner.py```. Vorrausgesetzt es sind alle nötigen Bibliotheken: requests, json, os, datetime, pprint installiert. 
 
 Konfiguration: Im Script selbst sollten noch einige Anpassungen vorgenommen werden, welche den Versandt von E-Mails betrifft. 
 Zunächst sollte der smtp Server angegeben werden, welcher zum versenden genutzt werden soll. Diese Adresse lässt sich beim E-Mail Provider herausfinden. 
