@@ -1,4 +1,6 @@
-import requests, json, os, datetime, pprint
+import requests, json, os, datetime, pprint, smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 ApiUrl = "https://www.imis.bfs.de/ogc/opendata/ows?service=WFS&version=1.1.0&request=GetFeature&typeName=opendata:odlinfo_odl_1h_latest&outputFormat=application/json"
 
@@ -54,10 +56,7 @@ Ausgabe = str("\nHöchster Wert: " + str(HighestValue) + "µSv/h | 0.08-0.40 Bet
 print(Ausgabe)
 
 if HighestValue > 0.4:
-    import smtplib
-    from email.mime.text import MIMEText
-    from email.mime.multipart import MIMEMultipart
-
+    
     # E-Mail-Server-Einstellungen
     smtp_server = ""
     smtp_port = 587
